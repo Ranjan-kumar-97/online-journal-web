@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<title>Online Journal</title>
+{% endblock %}
+
+{% block body %}
+<div class="columns">
+    <h1>*****Welcome to Online Journal*****</h1>
+
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Title</th>
+            <th>Author</th>
+            <th>Published</th>
+            <th>Contact</th>
+            <th>Actions</th>
+        </tr>
+        {% for journal in journals %}
+            <tr>
+                <td>{{ journal.id }}</td>
+                <td>{{ journal.title }}</td>
+                <td>{{ journal.author }}</td>
+                <td>{{ journal.published.date() }}</td>
+                <td>{{ journal.contact }}</td>
+                <td>
+                    <a href="/read/{{journal.id}}">Read Journal</a>
+                    <br>
+                    <a href="/update/{{journal.id}}">Update Journal</a>
+                    <br>
+                    <a href="/delete/{{journal.id}}">Delete Journal</a>
+                </td>
+            </tr>
+        {% endfor %}
+    </table>
+
+    <form action="/" method="POST" enctype="multipart/form-data">
+        <input type="number" name="id" id="id" placeholder="ID" required>
+        <input type="text" name="title" id="title" placeholder="Title" required>
+        <input type="text" name="author" id="author" placeholder="Author" required>
+        <input type="text" name="contact" id="contact" placeholder="Mobile or Email">
+        <br>
+        <textarea type="text" name="journal" id="journal" placeholder="Write Journal Here" rows="20" cols="91" required></textarea>
+        <br>
+        <button class="btn btn-primary" type="submit">Add Journal</button>
+        
+</div>
+{% endblock %}

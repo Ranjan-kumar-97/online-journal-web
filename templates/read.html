@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<title>Online Journal</title>
+{% endblock %}
+
+{% block body %}
+<div class="columns">
+    <h1>*****Welcome to Online Journal*****</h1>
+    <h1>***Showing Journal***</h1>
+
+
+    <form action="/read/{{journal.id}}" method="POST">
+        <label for="title">Title</label>
+        <label for="title">{{journal.title}}</label>
+        <br>
+        <label for="author">Author</label>
+        <label for="author">{{journal.author}}</label>
+        <br>
+        <textarea type="text" name="journal" id="journal" rows="20" cols="91" required>{{journal.journal}}</textarea>
+        <br>
+        <button class="btn btn-primary" type="submit">Go Home</button>
+        
+</div>
+{% endblock %}

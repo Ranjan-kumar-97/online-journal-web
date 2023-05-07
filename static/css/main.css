@@ -1,0 +1,37 @@
+body{
+    margin: auto;
+    font-family: sans-sarif;
+}
+
+th {
+    text-align: center; 
+    padding: 20px; 
+    border-bottom: solid 5px lightgrey;
+    
+}
+
+td {
+    text-align: center;
+    padding: 2px;
+    border-bottom: solid 2px lightblue;
+    border-right: solid 2px lightgrey;
+    border-left: solid 2px lightgrey;
+    
+}
+
+form {
+    justify-content: center;
+    margin-top: 20px;
+}
+
+#content {
+    justify-content: center;
+    width: 20%;
+}
+label{
+    text-align: left;
+    padding: 2px;
+    border-bottom: solid 2px lightblue;
+    border-top: solid 2px lightblue;
+    
+}
